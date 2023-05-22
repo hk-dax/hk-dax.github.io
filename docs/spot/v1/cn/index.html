@@ -401,7 +401,7 @@ API Key 做签名认证，以校验参数或参数值在传输途中是否发生
 
 <ul>
 <li>方法请求地址：即访问服务器地址
-api.liquidity.antalpha.com，比如 https://api.hk-dax.com/api/v1/order。</li>
+api.hk-dax.com，比如 https://api.hk-dax.com/api/v1/order。</li>
 <li>API 访问密钥（AccessKeyId）：您申请的 API Key 中的 Access Key。</li>
 <li>签名方法（SignatureMethod）：用户计算签名的基于哈希的协议，此处使用 HmacSHA256。</li>
 <li>签名版本（SignatureVersion）：签名协议的版本，此处使用1。</li>
@@ -422,7 +422,7 @@ HmacSHA256进行签名计算时，使用不同内容计算得到的结果会完�
 <h3 id='1-get-post-n'>1. 请求方法（GET 或 POST），后面添加换行符 “\n”</h3>
 <p><code>GET\n</code></p>
 <h3 id='2-n'>2. 添加小写的访问地址，后面添加换行符 “\n”</h3>
-<p><code>api.liquidity.antalpha.com\n</code></p>
+<p><code>api.hk-dax.com\n</code></p>
 <h3 id='3-n'>3. 访问方法的路径，后面添加换行符 “\n”</h3>
 <p><code>/api/v1/order\n</code></p>
 <h3 id='4-ascii'>4. 按照ASCII码的顺序对参数名进行排序。例如，下面是请求参数的原始顺序，进行过编码后</h3>
@@ -440,7 +440,7 @@ HmacSHA256进行签名计算时，使用不同内容计算得到的结果会完�
 <p><code>AccessKeyId=e2xxxxxx-99xxxxxx-84xxxxxx-7xxxx&amp;SignatureMethod=HmacSHA256&amp;SignatureVersion=1&amp;Timestamp=16620225819511</code></p>
 <h3 id='6'>6. 组成最终的要进行签名计算的字符串如下</h3>
 <p><code>POST\n</code><br>
-<code>api.liquidity.antalpha.com\n</code><br>
+<code>api.hk-dax.com\n</code><br>
 <code>/api/v1/order\n</code><br>
 <code>AccessKeyId=e2xxxxxx-99xxxxxx-84xxxxxx-7xxxx&amp;SignatureMethod=HmacSHA256&amp;SignatureVersion=1&amp;Timestamp=1662022581951</code></p>
 <h3 id='7-secret-key'>7. 用上一步里生成的 “请求字符串” 和你的密钥 (Secret Key) 生成一个数字签名</h3>
