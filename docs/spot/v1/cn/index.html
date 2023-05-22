@@ -380,7 +380,7 @@
 <p><strong>REST API</strong></p>
 
 <ul>
-<li>https://api.liquidity.antalpha.com</li>
+<li>https://api.hk-dax.com</li>
 </ul>
 <h2 id='c1fd2fc5ac'>限频规则</h2>
 <p>限频规则针对接口进行限频，目前每个接口访问限制为1s内10次</p>
@@ -401,7 +401,7 @@ API Key 做签名认证，以校验参数或参数值在传输途中是否发生
 
 <ul>
 <li>方法请求地址：即访问服务器地址
-api.liquidity.antalpha.com，比如 https://api.liquidity.antalpha.com/api/v1/order。</li>
+api.liquidity.antalpha.com，比如 https://api.hk-dax.com/api/v1/order。</li>
 <li>API 访问密钥（AccessKeyId）：您申请的 API Key 中的 Access Key。</li>
 <li>签名方法（SignatureMethod）：用户计算签名的基于哈希的协议，此处使用 HmacSHA256。</li>
 <li>签名版本（SignatureVersion）：签名协议的版本，此处使用1。</li>
@@ -418,7 +418,7 @@ HmacSHA256进行签名计算时，使用不同内容计算得到的结果会完�
 
 <p>查询某订单详情</p>
 
-<p><code>https://api.liquidity.antalpha.com/api/v1/order?AccessKeyId=e2xxxxxx-99xxxxxx-84xxxxxx-7xxxx&amp;SignatureMethod=HmacSHA256&amp;SignatureVersion=1&amp;Timestamp=1662022581951</code></p>
+<p><code>https://api.hk-dax.com/api/v1/order?AccessKeyId=e2xxxxxx-99xxxxxx-84xxxxxx-7xxxx&amp;SignatureMethod=HmacSHA256&amp;SignatureVersion=1&amp;Timestamp=1662022581951</code></p>
 <h3 id='1-get-post-n'>1. 请求方法（GET 或 POST），后面添加换行符 “\n”</h3>
 <p><code>GET\n</code></p>
 <h3 id='2-n'>2. 添加小写的访问地址，后面添加换行符 “\n”</h3>
@@ -452,7 +452,7 @@ HmacSHA256进行签名计算时，使用不同内容计算得到的结果会完�
 </ol>
 <h3 id='8'>8. 将生成的数字签名加入到请求的路径参数里</h3>
 <p>最终，发送到服务器的 API 请求应该为<br>
-<code>https://api.liquidity.antalpha.com/api/v1/order?AccessKeyId=e2xxxxxx-99xxxxxx-84xxxxxx-7xxxx&amp;SignatureMethod=HmacSHA256&amp;SignatureVersion=1&amp;Timestamp=1662022581951&amp;Signature=4F65x5A2bLyMWVQj3Aqp%2BB4w%2BivaA7n5Oi2SuYtCJ9o%3D</code></p>
+<code>https://api.hk-dax.com/api/v1/order?AccessKeyId=e2xxxxxx-99xxxxxx-84xxxxxx-7xxxx&amp;SignatureMethod=HmacSHA256&amp;SignatureVersion=1&amp;Timestamp=1662022581951&amp;Signature=4F65x5A2bLyMWVQj3Aqp%2BB4w%2BivaA7n5Oi2SuYtCJ9o%3D</code></p>
 
 <ul>
 <li>把所有必须的认证参数添加到接口调用的路径参数里</li>

@@ -387,7 +387,7 @@ and the right hand side is the request and response samples.</p>
 <p><strong>REST API</strong></p>
 
 <ul>
-<li>https://api.liquidity.antalpha.com</li>
+<li>https://api.hk-dax.com</li>
 </ul>
 <h2 id='rate-limit-rule'>Rate limit rule</h2>
 <p>The rate limit rule limits the frequency of api access, and currently each api is limited to 10
@@ -411,7 +411,7 @@ has proper permission.</p>
 <p>A valid request consists of below parts:</p>
 
 <ul>
-<li>API Path: for example https://api.liquidity.antalpha.com/api/v1/order</li>
+<li>API Path: for example https://api.hk-dax.com/api/v1/order</li>
 <li>API Access Key: The &#39;Access Key&#39; in your API Key</li>
 <li>Signature Method: The Hash method that is used to sign, it uses HmacSHA256</li>
 <li>Signature Version: The version for the signature protocol, it uses 1</li>
@@ -430,7 +430,7 @@ normalized before signing. Below signing steps take the order query as an exampl
 
 <p>This is a full URL to query one order:</p>
 
-<p><code>https://api.liquidity.antalpha.com/api/v1/order?AccessKeyId=e2xxxxxx-99xxxxxx-84xxxxxx-7xxxx&amp;SignatureMethod=HmacSHA256&amp;SignatureVersion=1&amp;Timestamp=1662022581951</code></p>
+<p><code>https://api.hk-dax.com/api/v1/order?AccessKeyId=e2xxxxxx-99xxxxxx-84xxxxxx-7xxxx&amp;SignatureMethod=HmacSHA256&amp;SignatureVersion=1&amp;Timestamp=1662022581951</code></p>
 <h3 id='1-the-request-method-get-or-post-append-line-break-quot-n-quot'>1. The request Method (GET or POST), append line break &quot;\n&quot;</h3>
 <p><code>GET\n</code></p>
 <h3 id='2-the-host-with-lower-case-append-line-break-quot-n-quot'>2. The host with lower case, append line break &quot;\n&quot;</h3>
@@ -473,7 +473,7 @@ function.</li>
 </ul>
 
 <p>Finally, the request sent to API should be:<br>
-<code>https://api.liquidity.antalpha.com/api/v1/order?AccessKeyId=e2xxxxxx-99xxxxxx-84xxxxxx-7xxxx&amp;SignatureMethod=HmacSHA256&amp;SignatureVersion=1&amp;Timestamp=1662022581951&amp;Signature=4F65x5A2bLyMWVQj3Aqp%2BB4w%2BivaA7n5Oi2SuYtCJ9o%3D</code></p>
+<code>https://api.hk-dax.com/api/v1/order?AccessKeyId=e2xxxxxx-99xxxxxx-84xxxxxx-7xxxx&amp;SignatureMethod=HmacSHA256&amp;SignatureVersion=1&amp;Timestamp=1662022581951&amp;Signature=4F65x5A2bLyMWVQj3Aqp%2BB4w%2BivaA7n5Oi2SuYtCJ9o%3D</code></p>
 <h2 id='demo'>Demo</h2>
 <p>Currently, we provide <a href="https://github.com/Antalpha-Liquidity/Api-demo">go</a>
 and <a href="https://github.com/Antalpha-Liquidity/Api-demo">java</a> demo.</p>
