@@ -1,0 +1,2364 @@
+
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <link href="images/favicon.ico" rel="icon" type="image/ico" />
+    <title>Antalpha Liquidity API doc</title>
+    <style>
+      .highlight table td { padding: 5px; }
+.highlight table pre { margin: 0; }
+.highlight .gh {
+  color: #999999;
+}
+.highlight .sr {
+  color: #f6aa11;
+}
+.highlight .go {
+  color: #888888;
+}
+.highlight .gp {
+  color: #555555;
+}
+.highlight .gs {
+}
+.highlight .gu {
+  color: #aaaaaa;
+}
+.highlight .nb {
+  color: #f6aa11;
+}
+.highlight .cm {
+  color: #75715e;
+}
+.highlight .cp {
+  color: #75715e;
+}
+.highlight .c1 {
+  color: #75715e;
+}
+.highlight .cs {
+  color: #75715e;
+}
+.highlight .c, .highlight .ch, .highlight .cd, .highlight .cpf {
+  color: #75715e;
+}
+.highlight .err {
+  color: #960050;
+}
+.highlight .gr {
+  color: #960050;
+}
+.highlight .gt {
+  color: #960050;
+}
+.highlight .gd {
+  color: #49483e;
+}
+.highlight .gi {
+  color: #49483e;
+}
+.highlight .ge {
+  color: #49483e;
+}
+.highlight .kc {
+  color: #66d9ef;
+}
+.highlight .kd {
+  color: #66d9ef;
+}
+.highlight .kr {
+  color: #66d9ef;
+}
+.highlight .no {
+  color: #66d9ef;
+}
+.highlight .kt {
+  color: #66d9ef;
+}
+.highlight .mf {
+  color: #ae81ff;
+}
+.highlight .mh {
+  color: #ae81ff;
+}
+.highlight .il {
+  color: #ae81ff;
+}
+.highlight .mi {
+  color: #ae81ff;
+}
+.highlight .mo {
+  color: #ae81ff;
+}
+.highlight .m, .highlight .mb, .highlight .mx {
+  color: #ae81ff;
+}
+.highlight .sc {
+  color: #ae81ff;
+}
+.highlight .se {
+  color: #ae81ff;
+}
+.highlight .ss {
+  color: #ae81ff;
+}
+.highlight .sd {
+  color: #e6db74;
+}
+.highlight .s2 {
+  color: #e6db74;
+}
+.highlight .sb {
+  color: #e6db74;
+}
+.highlight .sh {
+  color: #e6db74;
+}
+.highlight .si {
+  color: #e6db74;
+}
+.highlight .sx {
+  color: #e6db74;
+}
+.highlight .s1 {
+  color: #e6db74;
+}
+.highlight .s, .highlight .sa, .highlight .dl {
+  color: #e6db74;
+}
+.highlight .na {
+  color: #a6e22e;
+}
+.highlight .nc {
+  color: #a6e22e;
+}
+.highlight .nd {
+  color: #a6e22e;
+}
+.highlight .ne {
+  color: #a6e22e;
+}
+.highlight .nf, .highlight .fm {
+  color: #a6e22e;
+}
+.highlight .vc {
+  color: #ffffff;
+  background-color: #272822;
+}
+.highlight .nn {
+  color: #ffffff;
+  background-color: #272822;
+}
+.highlight .nl {
+  color: #ffffff;
+  background-color: #272822;
+}
+.highlight .ni {
+  color: #ffffff;
+  background-color: #272822;
+}
+.highlight .bp {
+  color: #ffffff;
+  background-color: #272822;
+}
+.highlight .vg {
+  color: #ffffff;
+  background-color: #272822;
+}
+.highlight .vi {
+  color: #ffffff;
+  background-color: #272822;
+}
+.highlight .nv, .highlight .vm {
+  color: #ffffff;
+  background-color: #272822;
+}
+.highlight .w {
+  color: #ffffff;
+  background-color: #272822;
+}
+.highlight {
+  color: #ffffff;
+  background-color: #272822;
+}
+.highlight .n, .highlight .py, .highlight .nx {
+  color: #ffffff;
+  background-color: #272822;
+}
+.highlight .ow {
+  color: #f92672;
+}
+.highlight .nt {
+  color: #f92672;
+}
+.highlight .k, .highlight .kv {
+  color: #f92672;
+}
+.highlight .kn {
+  color: #f92672;
+}
+.highlight .kp {
+  color: #f92672;
+}
+.highlight .o {
+  color: #f92672;
+}
+    </style>
+    <link href="stylesheets/screen.css" rel="stylesheet" media="screen" />
+    <link href="stylesheets/print.css" rel="stylesheet" media="print" />
+      <script src="javascripts/all.js"></script>
+  </head>
+
+  <body class="index" data-languages="[&quot;json&quot;]">
+    <a href="#" id="nav-button">
+      <span>
+        <img src="images/navbar.png" alt="" />
+      </span>
+    </a>
+    <header>
+      <div class="flex_box">
+        <img src="images/logo.svg" class="logo" alt="" />
+        <div class="nav_box">
+          <span class="nav_cell" style="display: none">
+            <a href="javascript:;" class="nav_first">v1<i class="icon_nav"></i></a>
+            <ul class="nav_ul">
+              <li>
+                <a href="/docs/spot/v1/en/" id="v1_url">v1</a>
+              </li>
+            </ul>
+          </span>
+          <span class="nav_cell nav_tab">
+            <a href="/docs/spot/v1/en/" id="btn_spot">现货</a>
+          </span>
+          <!--
+           <span class="nav_cell nav_tab">
+             <a href="/docs/dm/v1/en/" id="btn_dm">币本位交割合约</a>
+           </span>
+           <span class="nav_cell nav_tab">
+             <a href="/docs/coin_margined_swap/v1/en/" id="btn_coin_margined_swap">币本位永续合约</a>
+           </span>
+          <span class="nav_cell nav_tab">
+            <a href="/docs/usdt_swap/v1/en/" id="btn_usdt_swap">U本位合约</a>
+          </span>
+
+          <span class="nav_cell nav_tab">
+            <a href="/docs/option/v1/en/" id="btn_option">期权合约</a>
+          </span>
+          <span class="nav_cell nav_tab">
+            <a href="/docs/swap/v1/en/" id="btn_swap">永续合约</a>
+          </span> -->
+        </div>
+      </div>
+      <a href="/docs/spot/v1/cn/" class="lang" id="lang_box">简体中文</a>
+    </header>
+    <div class="toc-wrapper">
+        <div class="lang-selector">
+              <a href="#" data-language-name="json">json</a>
+        </div>
+        <div class="search">
+          <input type="text" class="search" id="input-search" placeholder="Search">
+        </div>
+        <ul class="search-results"></ul>
+      <ul id="toc" class="toc-list-h1">
+          <li>
+            <a href="#introduction" class="toc-h1 toc-link" data-title="Introduction">Introduction</a>
+          </li>
+          <li>
+            <a href="#api-access" class="toc-h1 toc-link" data-title="API Access">API Access</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#access-urls" class="toc-h2 toc-link" data-title="Access URLs">Access URLs</a>
+                  </li>
+                  <li>
+                    <a href="#rate-limit-rule" class="toc-h2 toc-link" data-title="Rate limit rule">Rate limit rule</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#authentication" class="toc-h1 toc-link" data-title="Authentication">Authentication</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#overview" class="toc-h2 toc-link" data-title="Overview">Overview</a>
+                  </li>
+                  <li>
+                    <a href="#signature-method" class="toc-h2 toc-link" data-title="Signature Method">Signature Method</a>
+                  </li>
+                  <li>
+                    <a href="#demo" class="toc-h2 toc-link" data-title="Demo">Demo</a>
+                  </li>
+                  <li>
+                    <a href="#security-best-practice" class="toc-h2 toc-link" data-title="Security Best Practice">Security Best Practice</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#public-data" class="toc-h1 toc-link" data-title="Public Data">Public Data</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#instruments-info" class="toc-h2 toc-link" data-title="Instruments Info">Instruments Info</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#market-data" class="toc-h1 toc-link" data-title="Market Data">Market Data</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#get-tickers" class="toc-h2 toc-link" data-title="Get tickers">Get tickers</a>
+                  </li>
+                  <li>
+                    <a href="#get-order-book" class="toc-h2 toc-link" data-title="Get order book">Get order book</a>
+                  </li>
+                  <li>
+                    <a href="#get-candlesticks" class="toc-h2 toc-link" data-title="Get candlesticks">Get candlesticks</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#account" class="toc-h1 toc-link" data-title="Account">Account</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#get-balance" class="toc-h2 toc-link" data-title="Get balance">Get balance</a>
+                  </li>
+                  <li>
+                    <a href="#get-fee-rates" class="toc-h2 toc-link" data-title="Get fee rates">Get fee rates</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#trade" class="toc-h1 toc-link" data-title="Trade">Trade</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#place-order" class="toc-h2 toc-link" data-title="Place order">Place order</a>
+                  </li>
+                  <li>
+                    <a href="#cancel-order" class="toc-h2 toc-link" data-title="Cancel order">Cancel order</a>
+                  </li>
+                  <li>
+                    <a href="#get-order-info" class="toc-h2 toc-link" data-title="Get order info">Get order info</a>
+                  </li>
+                  <li>
+                    <a href="#get-open-order-list" class="toc-h2 toc-link" data-title="Get open order list">Get open order list</a>
+                  </li>
+                  <li>
+                    <a href="#get-order-history" class="toc-h2 toc-link" data-title="Get order history">Get order history</a>
+                  </li>
+                  <li>
+                    <a href="#get-trade-list" class="toc-h2 toc-link" data-title="Get trade list">Get trade list</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#error-code" class="toc-h1 toc-link" data-title="Error Code">Error Code</a>
+          </li>
+      </ul>
+    </div>
+    <div class="page-wrapper">
+      <div class="dark-box"></div>
+      <div class="content">
+        <h1 id='introduction'>Introduction</h1>
+<p>Welcome to Antalpha Liquidity API！</p>
+
+<p>This is the official Antalpha Liquidity API document, and will be continuously updated.
+Antalpha Liquidity will also publish API announcement in advance for any API change.</p>
+
+<p><strong>How to read this document</strong></p>
+
+<p>The top of the document is the navigation menu for different API business;
+The language button in the top right is for different languages, it supports Chinese and English
+right now.
+The main content of each API document has three parts,
+the left hand side is the contents,
+the middle part is the document body,
+and the right hand side is the request and response samples.</p>
+
+<p>The document is mainly divided into the following four categories:</p>
+
+<p><code>Public Data</code></p>
+
+<p><code>Market Data</code></p>
+
+<p><code>Account Data</code></p>
+
+<p><code>Trading</code></p>
+<h1 id='api-access'>API Access</h1><h2 id='access-urls'>Access URLs</h2>
+<p><strong>REST API</strong></p>
+
+<ul>
+<li>https://api.liquidity.antalpha.com</li>
+</ul>
+<h2 id='rate-limit-rule'>Rate limit rule</h2>
+<p>The rate limit rule limits the frequency of api access, and currently each api is limited to 10
+times within 1s.</p>
+
+<p>It is suggested to adjust visiting strategy according the HTTP Header below:</p>
+
+<ul>
+<li>rateLimit-times: request times allowed per rate limit time window</li>
+<li>rateLimit-interval: interval of rate limit time window</li>
+<li>rateLimit-remaining: the remaining count for current rate limit time window</li>
+<li>rateLimit-reset: the expiring timestamp for current rate limit time window</li>
+</ul>
+<h1 id='authentication'>Authentication</h1><h3 id='overview'>Overview</h3>
+<p>The API request may be tampered during internet, therefore all private API must be signed by your
+API Key (Secrete Key).</p>
+
+<p>Each API Key has permission property, please check the API permission, and make sure your API key
+has proper permission.</p>
+
+<p>A valid request consists of below parts:</p>
+
+<ul>
+<li>API Path: for example https://api.liquidity.antalpha.com/api/v1/order</li>
+<li>API Access Key: The &#39;Access Key&#39; in your API Key</li>
+<li>Signature Method: The Hash method that is used to sign, it uses HmacSHA256</li>
+<li>Signature Version: The version for the signature protocol, it uses 1</li>
+<li>Timestamp: Unix timestamp format in milliseconds. It is useful to prevent the request to be
+intercepted by third-party.</li>
+<li>Parameters: Each API Method has a group of parameters, you can refer to detailed document for each
+of them.</li>
+<li>For GET request, all the parameters must be signed.</li>
+<li>For POST request, the parameters needn&#39;t be signed and should be put in request body.</li>
+<li>Signature: The value after signed, it is guarantee the signature is valid and the request is not
+be tempered.</li>
+</ul>
+<h2 id='signature-method'>Signature Method</h2>
+<p>The signature may be different if the request text is different, therefore the request should be
+normalized before signing. Below signing steps take the order query as an example:</p>
+
+<p>This is a full URL to query one order:</p>
+
+<p><code>https://api.liquidity.antalpha.com/api/v1/order?AccessKeyId=e2xxxxxx-99xxxxxx-84xxxxxx-7xxxx&amp;SignatureMethod=HmacSHA256&amp;SignatureVersion=1&amp;Timestamp=1662022581951</code></p>
+<h3 id='1-the-request-method-get-or-post-append-line-break-quot-n-quot'>1. The request Method (GET or POST), append line break &quot;\n&quot;</h3>
+<p><code>GET\n</code></p>
+<h3 id='2-the-host-with-lower-case-append-line-break-quot-n-quot'>2. The host with lower case, append line break &quot;\n&quot;</h3>
+<p><code>api.liquidity.antalpha.com\n</code></p>
+<h3 id='3-the-path-append-line-break-quot-n-quot'>3. The path, append line break &quot;\n&quot;</h3>
+<p><code>/api/v1/order\n</code></p>
+<h3 id='4-the-parameters-are-url-encoded-and-ordered-based-on-ascii'>4. The parameters are URL encoded, and ordered based on ASCII</h3>
+<p><code>AccessKeyId=e2xxxxxx-99xxxxxx-84xxxxxx-7xxxxSignatureMethod=HmacSHA256SignatureVersion=1Timestamp=1662022581951</code></p>
+
+<p>Use UTF-8 encoding and URL encoded, the hex must be upper case.
+For example, The semicolon &#39;:&#39; should be encoded as &#39;%3A&#39;, The space should be encoded as &#39;%20&#39;.</p>
+
+<p>Then above parameter should be ordered like below:</p>
+
+<p><code>AccessKeyId=e2xxxxxx-99xxxxxx-84xxxxxx-7xxxx</code><br>
+<code>SignatureMethod=HmacSHA256</code><br>
+<code>SignatureVersion=1</code><br>
+<code>Timestamp=1662022581951</code></p>
+<h3 id='5-use-char-quot-amp-quot-to-concatenate-all-parameters'>5. Use char &quot;&amp;&quot; to concatenate all parameters</h3>
+<p><code>AccessKeyId=e2xxxxxx-99xxxxxx-84xxxxxx-7xxxx&amp;SignatureMethod=HmacSHA256&amp;SignatureVersion=1&amp;Timestamp=16620225819511</code></p>
+<h3 id='6-assemble-the-pre-signed-text'>6. Assemble the pre-signed text</h3>
+<p><code>POST\n</code><br>
+<code>api.liquidity.antalpha.com\n</code><br>
+<code>/api/v1/order\n</code><br>
+<code>AccessKeyId=e2xxxxxx-99xxxxxx-84xxxxxx-7xxxx&amp;SignatureMethod=HmacSHA256&amp;SignatureVersion=1&amp;Timestamp=1662022581951</code></p>
+<h3 id='7-use-the-pre-signed-text-and-your-secret-key-to-generate-a-signature'>7. Use the pre-signed text and your Secret Key to generate a signature</h3>
+<ul>
+<li>Use the pre-signed text in step 6 and your API Secret Key to generate hash code by HmacSHA256 hash
+function.</li>
+<li>Encode the hash code with base-64 to generate the signature.</li>
+</ul>
+
+<p><code>4F65x5A2bLyMWVQj3Aqp+B4w+ivaA7n5Oi2SuYtCJ9o=</code></p>
+<h3 id='8-put-the-signature-into-request-url'>8. Put the signature into request URL</h3>
+<p>For Rest interface:</p>
+
+<ul>
+<li>Put all the parameters in the URL</li>
+<li>Encode signature by URL encoding and append in the URL with parameter name &quot;Signature&quot;.</li>
+</ul>
+
+<p>Finally, the request sent to API should be:<br>
+<code>https://api.liquidity.antalpha.com/api/v1/order?AccessKeyId=e2xxxxxx-99xxxxxx-84xxxxxx-7xxxx&amp;SignatureMethod=HmacSHA256&amp;SignatureVersion=1&amp;Timestamp=1662022581951&amp;Signature=4F65x5A2bLyMWVQj3Aqp%2BB4w%2BivaA7n5Oi2SuYtCJ9o%3D</code></p>
+<h2 id='demo'>Demo</h2>
+<p>Currently, we provide <a href="https://github.com/Antalpha-Liquidity/Api-demo">go</a>
+and <a href="https://github.com/Antalpha-Liquidity/Api-demo">java</a> demo.</p>
+<h2 id='security-best-practice'>Security Best Practice</h2>
+<ul>
+<li>It is strongly suggested to bind your IP with your API Key to ensure that your API Key can only be
+used in your machine. Furthermore, your API Key will be expired after 90 days if it is not bound
+with any IP.</li>
+<li>It is strongly suggested not to share your API Key with anybody or third-party software, otherwise
+your personal information and asset may be stolen. If your expose your API Key by accident, please
+do delete the API Key and create a new one.</li>
+</ul>
+<h1 id='public-data'>Public Data</h1><h2 id='instruments-info'>Instruments Info</h2><h3 id='http-request'>HTTP Request</h3>
+<ul>
+<li>GET <code>/api/v1/public/instruments</code></li>
+</ul>
+<h3 id='request-parameters'>Request Parameters</h3>
+<table><thead>
+<tr>
+<th style="text-align: left">Name</th>
+<th style="text-align: left">Type</th>
+<th style="text-align: left">Required</th>
+<th style="text-align: left">Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td style="text-align: left">instId</td>
+<td style="text-align: left">String</td>
+<td style="text-align: left">N</td>
+<td style="text-align: left">Instrument ID, e.g. <code>SPOT_BTC/USDT</code>, if both instId and instType is sent, instType will be ignored.</td>
+</tr>
+<tr>
+<td style="text-align: left">instType</td>
+<td style="text-align: left">String</td>
+<td style="text-align: left">Y</td>
+<td style="text-align: left">Instrument type, currently only <code>SPOT</code> is supported</td>
+</tr>
+</tbody></table>
+
+<blockquote>
+<p>Response:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"msg"</span><span class="p">:</span><span class="w"> </span><span class="s2">"success"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"code"</span><span class="p">:</span><span class="w"> </span><span class="mi">200</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"instId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"SPOT_ETC/BUSD"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"instType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"SPOT"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"baseAsset"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ETC"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"quoteAsset"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BUSD"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"baseTick"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"baseMin"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.03"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"quoteTick"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"quoteMin"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.5"</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">],</span><span class="w">
+  </span><span class="nl">"ts"</span><span class="p">:</span><span class="w"> </span><span class="mi">1679903538458</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div><h3 id='response-content'>Response Content</h3>
+<table><thead>
+<tr>
+<th style="text-align: left">Name</th>
+<th style="text-align: left">Type</th>
+<th style="text-align: left">Required</th>
+<th style="text-align: left">Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td style="text-align: left">instId</td>
+<td style="text-align: left">String</td>
+<td style="text-align: left"></td>
+<td style="text-align: left">Instrument ID</td>
+</tr>
+<tr>
+<td style="text-align: left">instType</td>
+<td style="text-align: left">String</td>
+<td style="text-align: left"></td>
+<td style="text-align: left">Instrument type</td>
+</tr>
+<tr>
+<td style="text-align: left">baseAsset</td>
+<td style="text-align: left">String</td>
+<td style="text-align: left"></td>
+<td style="text-align: left">Base asset, e.g. <code>BTC</code> in <code>BTC/USDT</code></td>
+</tr>
+<tr>
+<td style="text-align: left">quoteAsset</td>
+<td style="text-align: left">String</td>
+<td style="text-align: left"></td>
+<td style="text-align: left">Quote asset, e.g. <code>USDT</code> in <code>BTC/USDT</code></td>
+</tr>
+<tr>
+<td style="text-align: left">baseTick</td>
+<td style="text-align: left">String</td>
+<td style="text-align: left"></td>
+<td style="text-align: left">Base asset tick size, e.g. 0.0001</td>
+</tr>
+<tr>
+<td style="text-align: left">baseMin</td>
+<td style="text-align: left">String</td>
+<td style="text-align: left"></td>
+<td style="text-align: left">Base asset minimum order size.</td>
+</tr>
+<tr>
+<td style="text-align: left">quoteTick</td>
+<td style="text-align: left">String</td>
+<td style="text-align: left"></td>
+<td style="text-align: left">Quote asset tick size, e.g. 0.0001</td>
+</tr>
+<tr>
+<td style="text-align: left">quoteMin</td>
+<td style="text-align: left">String</td>
+<td style="text-align: left"></td>
+<td style="text-align: left">Quote asset minimum order size.</td>
+</tr>
+</tbody></table>
+<h1 id='market-data'>Market Data</h1><h2 id='get-tickers'>Get tickers</h2><h3 id='http-request-2'>HTTP Request</h3>
+<ul>
+<li>GET <code>/api/v1/market/tickers</code></li>
+</ul>
+<h3 id='request-parameters-2'>Request Parameters</h3>
+<table><thead>
+<tr>
+<th style="text-align: left">Name</th>
+<th style="text-align: left">Type</th>
+<th style="text-align: left">Required</th>
+<th style="text-align: left">Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td style="text-align: left">instId</td>
+<td style="text-align: left">String</td>
+<td style="text-align: left">N</td>
+<td style="text-align: left">Instrument ID, e.g. <code>SPOT_BTC/USDT</code>, if both instId and instType is sent, instType will be ignored.</td>
+</tr>
+<tr>
+<td style="text-align: left">instType</td>
+<td style="text-align: left">String</td>
+<td style="text-align: left">Y</td>
+<td style="text-align: left">Instrument type, currently only <code>SPOT</code> is supported</td>
+</tr>
+</tbody></table>
+
+<blockquote>
+<p>Response:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"msg"</span><span class="p">:</span><span class="w"> </span><span class="s2">"success"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"code"</span><span class="p">:</span><span class="w"> </span><span class="mi">200</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"instId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"SPOT_ETC/BUSD"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"instType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"SPOT"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"askPx"</span><span class="p">:</span><span class="w"> </span><span class="s2">"20.00"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"askSz"</span><span class="p">:</span><span class="w"> </span><span class="s2">"201.41"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"bidPx"</span><span class="p">:</span><span class="w"> </span><span class="s2">"19.99"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"bidSz"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1.27"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"openPx"</span><span class="p">:</span><span class="w"> </span><span class="s2">"20.43"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"highPx"</span><span class="p">:</span><span class="w"> </span><span class="s2">"21.33"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"lowPx"</span><span class="p">:</span><span class="w"> </span><span class="s2">"19.33"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"lastPx"</span><span class="p">:</span><span class="w"> </span><span class="s2">"19.99"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"ts"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1679902688372"</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">],</span><span class="w">
+  </span><span class="nl">"ts"</span><span class="p">:</span><span class="w"> </span><span class="mi">1679902737056</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div><h3 id='response-content-2'>Response Content</h3>
+<table><thead>
+<tr>
+<th style="text-align: left">Name</th>
+<th style="text-align: left">Type</th>
+<th style="text-align: left">Required</th>
+<th style="text-align: left">Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td style="text-align: left">instId</td>
+<td style="text-align: left">String</td>
+<td style="text-align: left"></td>
+<td style="text-align: left">Instrument ID</td>
+</tr>
+<tr>
+<td style="text-align: left">instType</td>
+<td style="text-align: left">String</td>
+<td style="text-align: left"></td>
+<td style="text-align: left">Instrument Type</td>
+</tr>
+<tr>
+<td style="text-align: left">askPx</td>
+<td style="text-align: left">String</td>
+<td style="text-align: left"></td>
+<td style="text-align: left">Best ask price</td>
+</tr>
+<tr>
+<td style="text-align: left">askSz</td>
+<td style="text-align: left">String</td>
+<td style="text-align: left"></td>
+<td style="text-align: left">Best ask size</td>
+</tr>
+<tr>
+<td style="text-align: left">bidPx</td>
+<td style="text-align: left">String</td>
+<td style="text-align: left"></td>
+<td style="text-align: left">Best bid price</td>
+</tr>
+<tr>
+<td style="text-align: left">bidSz</td>
+<td style="text-align: left">String</td>
+<td style="text-align: left"></td>
+<td style="text-align: left">Best bid size</td>
+</tr>
+<tr>
+<td style="text-align: left">openPx</td>
+<td style="text-align: left">String</td>
+<td style="text-align: left"></td>
+<td style="text-align: left">Open price in the past 24 hours</td>
+</tr>
+<tr>
+<td style="text-align: left">highPx</td>
+<td style="text-align: left">String</td>
+<td style="text-align: left"></td>
+<td style="text-align: left">Highest price in the past 24 hours</td>
+</tr>
+<tr>
+<td style="text-align: left">lowPx</td>
+<td style="text-align: left">String</td>
+<td style="text-align: left"></td>
+<td style="text-align: left">Lowest price in the past 24 hours</td>
+</tr>
+<tr>
+<td style="text-align: left">lastPx</td>
+<td style="text-align: left">String</td>
+<td style="text-align: left"></td>
+<td style="text-align: left">Last traded price</td>
+</tr>
+<tr>
+<td style="text-align: left">ts</td>
+<td style="text-align: left">String</td>
+<td style="text-align: left"></td>
+<td style="text-align: left">Ticker data generation time, Unix timestamp format in milliseconds, e.g. 1597026383085</td>
+</tr>
+</tbody></table>
+<h2 id='get-order-book'>Get order book</h2><h3 id='http-request-3'>HTTP Request</h3>
+<ul>
+<li>GET <code>/api/v1/market/depth</code></li>
+</ul>
+<h3 id='request-parameters-3'>Request Parameters</h3>
+<table><thead>
+<tr>
+<th style="text-align: left">Name</th>
+<th style="text-align: left">Type</th>
+<th style="text-align: left">Required</th>
+<th style="text-align: left">Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td style="text-align: left">instId</td>
+<td style="text-align: left">String</td>
+<td style="text-align: left">Y</td>
+<td style="text-align: left">Instrument ID, e.g. <code>SPOT_BTC/USDT</code></td>
+</tr>
+<tr>
+<td style="text-align: left">sz</td>
+<td style="text-align: left">String</td>
+<td style="text-align: left">N</td>
+<td style="text-align: left">Order book depth per side, default returns to 100 depth data, e.g. [5/10/20/50/100/400]</td>
+</tr>
+</tbody></table>
+
+<blockquote>
+<p>Response:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"msg"</span><span class="p">:</span><span class="w"> </span><span class="s2">"success"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"code"</span><span class="p">:</span><span class="w"> </span><span class="mi">200</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"bids"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">[</span><span class="w">
+          </span><span class="s2">"19.90"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"673.30"</span><span class="w">
+        </span><span class="p">]</span><span class="w">
+      </span><span class="p">],</span><span class="w">
+      </span><span class="nl">"asks"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">[</span><span class="w">
+          </span><span class="s2">"19.95"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"1.27"</span><span class="w">
+        </span><span class="p">]</span><span class="w">
+      </span><span class="p">],</span><span class="w">
+      </span><span class="nl">"ts"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1679905338772"</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">],</span><span class="w">
+  </span><span class="nl">"ts"</span><span class="p">:</span><span class="w"> </span><span class="mi">1679905338772</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div><h3 id='response-content-3'>Response Content</h3>
+<table><thead>
+<tr>
+<th style="text-align: left">Name</th>
+<th style="text-align: left">Type</th>
+<th style="text-align: left">Required</th>
+<th style="text-align: left">Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td style="text-align: left">asks</td>
+<td style="text-align: left">array</td>
+<td style="text-align: left"></td>
+<td style="text-align: left">Order book on sell side</td>
+</tr>
+<tr>
+<td style="text-align: left">bids</td>
+<td style="text-align: left">array</td>
+<td style="text-align: left"></td>
+<td style="text-align: left">Order book on buy side</td>
+</tr>
+<tr>
+<td style="text-align: left">ts</td>
+<td style="text-align: left">String</td>
+<td style="text-align: left"></td>
+<td style="text-align: left">Order book generation time</td>
+</tr>
+</tbody></table>
+<h2 id='get-candlesticks'>Get candlesticks</h2><h3 id='http-request-4'>HTTP Request</h3>
+<ul>
+<li>GET <code>/api/v1/market/candles</code></li>
+</ul>
+<h3 id='request-parameters-4'>Request Parameters</h3>
+<table><thead>
+<tr>
+<th style="text-align: left">Name</th>
+<th style="text-align: left">Type</th>
+<th style="text-align: left">Required</th>
+<th style="text-align: left">Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td style="text-align: left">instId</td>
+<td style="text-align: left">String</td>
+<td style="text-align: left">Y</td>
+<td style="text-align: left">Instrument ID, e.g. <code>SPOT_BTC/USDT</code></td>
+</tr>
+<tr>
+<td style="text-align: left">bar</td>
+<td style="text-align: left">String</td>
+<td style="text-align: left">N</td>
+<td style="text-align: left">Bar size, the default is <code>1m</code>, e.g. [1m/3m/5m/15m/30m/1h/2h/4h/6h/1d/1w/1M]</td>
+</tr>
+<tr>
+<td style="text-align: left">start</td>
+<td style="text-align: left">String</td>
+<td style="text-align: left">N</td>
+<td style="text-align: left">Pagination of data to return records earlier than the requested ts in seconds format, e.g. 1597026383</td>
+</tr>
+<tr>
+<td style="text-align: left">end</td>
+<td style="text-align: left">String</td>
+<td style="text-align: left">N</td>
+<td style="text-align: left">Pagination of data to return records newer than the requested ts</td>
+</tr>
+<tr>
+<td style="text-align: left">limit</td>
+<td style="text-align: left">String</td>
+<td style="text-align: left">N</td>
+<td style="text-align: left">Number of results per request. The maximum is <code>300</code>. The default is <code>100</code>.</td>
+</tr>
+</tbody></table>
+
+<blockquote>
+<p>Response:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"msg"</span><span class="p">:</span><span class="w"> </span><span class="s2">"success"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"code"</span><span class="p">:</span><span class="w"> </span><span class="mi">200</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">[</span><span class="w">
+      </span><span class="s2">"1679873100"</span><span class="p">,</span><span class="w">
+      </span><span class="err">//</span><span class="w"> </span><span class="err">Opening</span><span class="w"> </span><span class="err">time</span><span class="w"> </span><span class="err">of</span><span class="w"> </span><span class="err">the</span><span class="w"> </span><span class="err">candlestick</span><span class="p">,</span><span class="w"> </span><span class="err">Unix</span><span class="w"> </span><span class="err">timestamp</span><span class="w"> </span><span class="err">format</span><span class="w"> </span><span class="err">in</span><span class="w"> </span><span class="err">seconds</span><span class="p">,</span><span class="w"> </span><span class="err">e.g.</span><span class="w"> </span><span class="mi">1597026383</span><span class="w">
+      </span><span class="s2">"20.43"</span><span class="p">,</span><span class="w">
+      </span><span class="err">//</span><span class="w"> </span><span class="err">Open</span><span class="w"> </span><span class="err">price</span><span class="w">
+      </span><span class="s2">"20.43"</span><span class="p">,</span><span class="w">
+      </span><span class="err">//</span><span class="w"> </span><span class="err">highest</span><span class="w"> </span><span class="err">price</span><span class="w">
+      </span><span class="s2">"20.43"</span><span class="p">,</span><span class="w">
+      </span><span class="err">//</span><span class="w"> </span><span class="err">Lowest</span><span class="w"> </span><span class="err">price</span><span class="w">
+      </span><span class="s2">"20.43"</span><span class="w">
+      </span><span class="err">//</span><span class="w"> </span><span class="err">Close</span><span class="w"> </span><span class="err">price</span><span class="w">
+    </span><span class="p">],</span><span class="w">
+    </span><span class="p">[</span><span class="w">
+      </span><span class="s2">"1679873400"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"20.43"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"20.43"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"20.43"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"20.43"</span><span class="w">
+    </span><span class="p">]</span><span class="w">
+  </span><span class="p">],</span><span class="w">
+  </span><span class="nl">"ts"</span><span class="p">:</span><span class="w"> </span><span class="mi">1679903108172</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div><h1 id='account'>Account</h1><h2 id='get-balance'>Get balance</h2>
+<p>API Key Permission: Read</p>
+<h3 id='http-request-5'>HTTP Request</h3>
+<ul>
+<li>GET <code>/api/v1/account/balance</code></li>
+</ul>
+<h3 id='request-parameters-5'>Request Parameters</h3>
+<table><thead>
+<tr>
+<th style="text-align: left">Name</th>
+<th style="text-align: left">Type</th>
+<th style="text-align: left">Required</th>
+<th style="text-align: left">Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td style="text-align: left">asset</td>
+<td style="text-align: left">String</td>
+<td style="text-align: left">N</td>
+<td style="text-align: left">Single asset or multiple assets (no more than 20) separated with comma, e.g. <code>BTC</code> or <code>BTC,ETH</code>.</td>
+</tr>
+</tbody></table>
+
+<blockquote>
+<p>Response:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"msg"</span><span class="p">:</span><span class="w"> </span><span class="s2">"success"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"code"</span><span class="p">:</span><span class="w"> </span><span class="mi">200</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"totalValue"</span><span class="p">:</span><span class="w"> </span><span class="s2">"99979608.982030863675555489362903"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+      </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"asset"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BTC"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"bal"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1.41500000680799135"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"frozBal"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"avlBal"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1.41500000680799135"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"utime"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1679902397025"</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">],</span><span class="w">
+    </span><span class="nl">"utime"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1679902397025"</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="nl">"ts"</span><span class="p">:</span><span class="w"> </span><span class="mi">1679902397025</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div><h3 id='response-content-4'>Response Content</h3>
+<table><thead>
+<tr>
+<th style="text-align: left">Name</th>
+<th style="text-align: left">Type</th>
+<th style="text-align: left">Required</th>
+<th style="text-align: left">Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td style="text-align: left">totalValue</td>
+<td style="text-align: left">String</td>
+<td style="text-align: left"></td>
+<td style="text-align: left">The total amount of equity in USD</td>
+</tr>
+<tr>
+<td style="text-align: left">uTime</td>
+<td style="text-align: left">String</td>
+<td style="text-align: left"></td>
+<td style="text-align: left">Update time of account information, millisecond format of Unix timestamp, e.g. 1597026383085</td>
+</tr>
+<tr>
+<td style="text-align: left">data</td>
+<td style="text-align: left">Array</td>
+<td style="text-align: left"></td>
+<td style="text-align: left">Detailed asset information in all currencies</td>
+</tr>
+<tr>
+<td style="text-align: left">&gt; asset</td>
+<td style="text-align: left">String</td>
+<td style="text-align: left"></td>
+<td style="text-align: left">Asset, e.g. <code>BTC</code></td>
+</tr>
+<tr>
+<td style="text-align: left">&gt; bal</td>
+<td style="text-align: left">String</td>
+<td style="text-align: left"></td>
+<td style="text-align: left">Balance</td>
+</tr>
+<tr>
+<td style="text-align: left">&gt; frozBal</td>
+<td style="text-align: left">String</td>
+<td style="text-align: left"></td>
+<td style="text-align: left">Frozen balance of the currency</td>
+</tr>
+<tr>
+<td style="text-align: left">&gt; avlBal</td>
+<td style="text-align: left">String</td>
+<td style="text-align: left"></td>
+<td style="text-align: left">Available balance of the currency</td>
+</tr>
+<tr>
+<td style="text-align: left">&gt; uTime</td>
+<td style="text-align: left">String</td>
+<td style="text-align: left"></td>
+<td style="text-align: left">Update time of currency balance information</td>
+</tr>
+</tbody></table>
+<h2 id='get-fee-rates'>Get fee rates</h2>
+<p>API Key Permission: Read</p>
+<h3 id='http-request-6'>HTTP Request</h3>
+<ul>
+<li>GET <code>/api/v1/account/tradeFee</code></li>
+</ul>
+<h3 id='request-parameters-6'>Request Parameters</h3>
+<table><thead>
+<tr>
+<th style="text-align: left">Name</th>
+<th style="text-align: left">Type</th>
+<th style="text-align: left">Required</th>
+<th style="text-align: left">Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td style="text-align: left">instId</td>
+<td style="text-align: left">String</td>
+<td style="text-align: left">N</td>
+<td style="text-align: left">Instrument ID, e.g. <code>SPOT_BTC/USDT</code>, if both instId and instType is sent, instType will be ignored.</td>
+</tr>
+<tr>
+<td style="text-align: left">instType</td>
+<td style="text-align: left">String</td>
+<td style="text-align: left">Y</td>
+<td style="text-align: left">Instrument type, currently only <code>SPOT</code> is supported</td>
+</tr>
+</tbody></table>
+
+<blockquote>
+<p>Response:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"msg"</span><span class="p">:</span><span class="w"> </span><span class="s2">"success"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"code"</span><span class="p">:</span><span class="w"> </span><span class="mi">200</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"instType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"SPOT"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"instId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"SPOT_ETC/BUSD"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"takerFee"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.07"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"makerFee"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.07"</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">],</span><span class="w">
+  </span><span class="nl">"ts"</span><span class="p">:</span><span class="w"> </span><span class="mi">1679902503029</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div><h3 id='response-content-5'>Response Content</h3>
+<table><thead>
+<tr>
+<th style="text-align: left">Name</th>
+<th style="text-align: left">Type</th>
+<th style="text-align: left">Required</th>
+<th style="text-align: left">Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td style="text-align: left">instId</td>
+<td style="text-align: left">String</td>
+<td style="text-align: left"></td>
+<td style="text-align: left">Instrument Id</td>
+</tr>
+<tr>
+<td style="text-align: left">instType</td>
+<td style="text-align: left">String</td>
+<td style="text-align: left"></td>
+<td style="text-align: left">Instrument Type</td>
+</tr>
+<tr>
+<td style="text-align: left">takerFee</td>
+<td style="text-align: left">String</td>
+<td style="text-align: left"></td>
+<td style="text-align: left">Taker fee rate</td>
+</tr>
+<tr>
+<td style="text-align: left">makerFee</td>
+<td style="text-align: left">String</td>
+<td style="text-align: left"></td>
+<td style="text-align: left">Maker fee rate</td>
+</tr>
+</tbody></table>
+<h1 id='trade'>Trade</h1><h2 id='place-order'>Place order</h2>
+<p>API Key Permission: Trade</p>
+<h3 id='http-request-7'>HTTP Request</h3>
+<ul>
+<li>POST <code>/api/v1/order</code></li>
+</ul>
+
+<blockquote>
+<p>Request:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"instId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"SPOT_ETC/BUSD"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"clOrdId"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"side"</span><span class="p">:</span><span class="w"> </span><span class="s2">"buy"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"ordPx"</span><span class="p">:</span><span class="w"> </span><span class="s2">"33"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"ordType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"limit"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"ordQty"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.05"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"ordAmt"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"ordTag"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div><h3 id='request-parameters-7'>Request Parameters</h3>
+<table><thead>
+<tr>
+<th style="text-align: left">Name</th>
+<th style="text-align: left">Type</th>
+<th style="text-align: left">Required</th>
+<th style="text-align: left">Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td style="text-align: left">instId</td>
+<td style="text-align: left">String</td>
+<td style="text-align: left">Y</td>
+<td style="text-align: left">Instrument Id</td>
+</tr>
+<tr>
+<td style="text-align: left">side</td>
+<td style="text-align: left">String</td>
+<td style="text-align: left">Y</td>
+<td style="text-align: left">Order side, <code>buy</code> <code>sell</code></td>
+</tr>
+<tr>
+<td style="text-align: left">clOrdId</td>
+<td style="text-align: left">String</td>
+<td style="text-align: left">N</td>
+<td style="text-align: left">Client Order ID as assigned by the client, should be unique</td>
+</tr>
+<tr>
+<td style="text-align: left">ordPx</td>
+<td style="text-align: left">String</td>
+<td style="text-align: left">N</td>
+<td style="text-align: left">Order price. Only applicable to <code>limit</code> order.</td>
+</tr>
+<tr>
+<td style="text-align: left">ordType</td>
+<td style="text-align: left">String</td>
+<td style="text-align: left">Y</td>
+<td style="text-align: left">Order type, e.g. <code>market</code> <code>limit</code></td>
+</tr>
+<tr>
+<td style="text-align: left">ordQty</td>
+<td style="text-align: left">String</td>
+<td style="text-align: left">N</td>
+<td style="text-align: left">Quantity to buy or sell in base asset.</td>
+</tr>
+<tr>
+<td style="text-align: left">ordAmt</td>
+<td style="text-align: left">String</td>
+<td style="text-align: left">N</td>
+<td style="text-align: left">Amount to buy or sell in quote asset.</td>
+</tr>
+<tr>
+<td style="text-align: left">ordTag</td>
+<td style="text-align: left">string</td>
+<td style="text-align: left">N</td>
+<td style="text-align: left">Order tag</td>
+</tr>
+</tbody></table>
+
+<blockquote>
+<p>Response:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"msg"</span><span class="p">:</span><span class="w"> </span><span class="s2">"success"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"code"</span><span class="p">:</span><span class="w"> </span><span class="mi">200</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"instId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"SPOT_ETC/BUSD"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"clOrdId"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"side"</span><span class="p">:</span><span class="w"> </span><span class="s2">"buy"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"ordPx"</span><span class="p">:</span><span class="w"> </span><span class="s2">"33"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"ordType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"limit"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"ordQty"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.05"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"ordAmt"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"ordTag"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"ordId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"22148"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"ctime"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1679897698010"</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">],</span><span class="w">
+  </span><span class="nl">"ts"</span><span class="p">:</span><span class="w"> </span><span class="mi">1679897698037</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div><h3 id='response-content-6'>Response Content</h3>
+<table><thead>
+<tr>
+<th style="text-align: left">Name</th>
+<th style="text-align: left">Type</th>
+<th style="text-align: left">Required</th>
+<th style="text-align: left">Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td style="text-align: left">instId</td>
+<td style="text-align: left">String</td>
+<td style="text-align: left"></td>
+<td style="text-align: left">Instrument Id</td>
+</tr>
+<tr>
+<td style="text-align: left">ordId</td>
+<td style="text-align: left">String</td>
+<td style="text-align: left"></td>
+<td style="text-align: left">Order ID</td>
+</tr>
+<tr>
+<td style="text-align: left">side</td>
+<td style="text-align: left">String</td>
+<td style="text-align: left"></td>
+<td style="text-align: left">Order side</td>
+</tr>
+<tr>
+<td style="text-align: left">clOrdId</td>
+<td style="text-align: left">String</td>
+<td style="text-align: left"></td>
+<td style="text-align: left">Client Order ID</td>
+</tr>
+<tr>
+<td style="text-align: left">ordPx</td>
+<td style="text-align: left">String</td>
+<td style="text-align: left"></td>
+<td style="text-align: left">Order price</td>
+</tr>
+<tr>
+<td style="text-align: left">ordType</td>
+<td style="text-align: left">String</td>
+<td style="text-align: left"></td>
+<td style="text-align: left">Order type</td>
+</tr>
+<tr>
+<td style="text-align: left">ordQty</td>
+<td style="text-align: left">String</td>
+<td style="text-align: left"></td>
+<td style="text-align: left">Quantity to buy or sell in base asset.</td>
+</tr>
+<tr>
+<td style="text-align: left">ordAmt</td>
+<td style="text-align: left">String</td>
+<td style="text-align: left"></td>
+<td style="text-align: left">Amount to buy or sell in quote asset.</td>
+</tr>
+<tr>
+<td style="text-align: left">ordTag</td>
+<td style="text-align: left">String</td>
+<td style="text-align: left"></td>
+<td style="text-align: left">Order tag</td>
+</tr>
+<tr>
+<td style="text-align: left">cTime</td>
+<td style="text-align: left">String</td>
+<td style="text-align: left"></td>
+<td style="text-align: left">Order creation time</td>
+</tr>
+</tbody></table>
+<h2 id='cancel-order'>Cancel order</h2>
+<p>API Key Permission: Trade</p>
+<h3 id='http-request-8'>HTTP Request</h3>
+<ul>
+<li>POST <code>/api/v1/cancelOrder</code></li>
+</ul>
+
+<blockquote>
+<p>Request:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"instId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"SPOT_ETC/BUSD"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"clOrdId"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"ordId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"22149"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div><h3 id='request-parameters-8'>Request Parameters</h3>
+<table><thead>
+<tr>
+<th style="text-align: left">Name</th>
+<th style="text-align: left">Type</th>
+<th style="text-align: left">Required</th>
+<th style="text-align: left">Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td style="text-align: left">instId</td>
+<td style="text-align: left">String</td>
+<td style="text-align: left">N</td>
+<td style="text-align: left">Instrument ID</td>
+</tr>
+<tr>
+<td style="text-align: left">ordId</td>
+<td style="text-align: left">String</td>
+<td style="text-align: left">N</td>
+<td style="text-align: left">Order id, when both ordId and clOrdId is sent, clOrdId will be ignored. If none of them is sent, all open order of the instrument id will be cancelled.</td>
+</tr>
+<tr>
+<td style="text-align: left">clOrdId</td>
+<td style="text-align: left">String</td>
+<td style="text-align: left">N</td>
+<td style="text-align: left">Client Order ID</td>
+</tr>
+</tbody></table>
+
+<blockquote>
+<p>Response:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"msg"</span><span class="p">:</span><span class="w"> </span><span class="s2">"success"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"code"</span><span class="p">:</span><span class="w"> </span><span class="mi">200</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"instId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"SPOT_ETC/BUSD"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"clOrdId"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"ordId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"22149"</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">],</span><span class="w">
+  </span><span class="nl">"ts"</span><span class="p">:</span><span class="w"> </span><span class="mi">1679897917815</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div><h3 id='response-content-7'>Response Content</h3>
+<table><thead>
+<tr>
+<th style="text-align: left">Name</th>
+<th style="text-align: left">Type</th>
+<th style="text-align: left">Required</th>
+<th style="text-align: left">Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td style="text-align: left">instId</td>
+<td style="text-align: left">String</td>
+<td style="text-align: left"></td>
+<td style="text-align: left">Instrument Id</td>
+</tr>
+<tr>
+<td style="text-align: left">ordId</td>
+<td style="text-align: left">String</td>
+<td style="text-align: left"></td>
+<td style="text-align: left">Order Id</td>
+</tr>
+<tr>
+<td style="text-align: left">clOrdId</td>
+<td style="text-align: left">String</td>
+<td style="text-align: left"></td>
+<td style="text-align: left">Client Order ID</td>
+</tr>
+</tbody></table>
+<h2 id='get-order-info'>Get order info</h2>
+<p>API Key Permission: Read</p>
+<h3 id='http-request-9'>HTTP Request</h3>
+<ul>
+<li>GET <code>/api/v1/orderInfo</code></li>
+</ul>
+<h3 id='request-parameters-9'>Request Parameters</h3>
+<table><thead>
+<tr>
+<th style="text-align: left">Name</th>
+<th style="text-align: left">Type</th>
+<th style="text-align: left">Required</th>
+<th style="text-align: left">Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td style="text-align: left">instId</td>
+<td style="text-align: left">String</td>
+<td style="text-align: left">N</td>
+<td style="text-align: left">Instrument ID</td>
+</tr>
+<tr>
+<td style="text-align: left">ordId</td>
+<td style="text-align: left">String</td>
+<td style="text-align: left">N</td>
+<td style="text-align: left">Order id, when both ordId and clOrdId is sent, clOrdId will be ignored.</td>
+</tr>
+<tr>
+<td style="text-align: left">clOrdId</td>
+<td style="text-align: left">String</td>
+<td style="text-align: left">N</td>
+<td style="text-align: left">Client Order ID</td>
+</tr>
+</tbody></table>
+
+<blockquote>
+<p>Response:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"msg"</span><span class="p">:</span><span class="w"> </span><span class="s2">"success"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"code"</span><span class="p">:</span><span class="w"> </span><span class="mi">200</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"instId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"SPOT_ETC/BUSD"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"instType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"SPOT"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"ordId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"22149"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"clOrdId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0255c8c5b6ad4d70bbb4c8f9d1d7557f"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"side"</span><span class="p">:</span><span class="w"> </span><span class="s2">"buy"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"ordPx"</span><span class="p">:</span><span class="w"> </span><span class="s2">"10"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"ordType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"limit"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"ordQty"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.05"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"ordAmt"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"fillQty"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.000000000000000000"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"fillAmt"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"ordTag"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"totalFee"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"feeAsset"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BUSD"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"avgFillPx"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"CANCELLED"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"utime"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1679897917759"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"ctime"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1679897908029"</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="nl">"ts"</span><span class="p">:</span><span class="w"> </span><span class="mi">1679897995189</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div><h3 id='response-content-8'>Response Content</h3>
+<table><thead>
+<tr>
+<th style="text-align: left">Name</th>
+<th style="text-align: left">Type</th>
+<th style="text-align: left">Required</th>
+<th style="text-align: left">Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td style="text-align: left">instId</td>
+<td style="text-align: left">String</td>
+<td style="text-align: left"></td>
+<td style="text-align: left">Instrument ID</td>
+</tr>
+<tr>
+<td style="text-align: left">instType</td>
+<td style="text-align: left">String</td>
+<td style="text-align: left"></td>
+<td style="text-align: left">Instrument type</td>
+</tr>
+<tr>
+<td style="text-align: left">side</td>
+<td style="text-align: left">String</td>
+<td style="text-align: left"></td>
+<td style="text-align: left">Order side</td>
+</tr>
+<tr>
+<td style="text-align: left">ordId</td>
+<td style="text-align: left">String</td>
+<td style="text-align: left"></td>
+<td style="text-align: left">Order ID</td>
+</tr>
+<tr>
+<td style="text-align: left">clOrdId</td>
+<td style="text-align: left">String</td>
+<td style="text-align: left"></td>
+<td style="text-align: left">Client Order ID</td>
+</tr>
+<tr>
+<td style="text-align: left">ordPx</td>
+<td style="text-align: left">String</td>
+<td style="text-align: left"></td>
+<td style="text-align: left">Order price</td>
+</tr>
+<tr>
+<td style="text-align: left">ordType</td>
+<td style="text-align: left">String</td>
+<td style="text-align: left"></td>
+<td style="text-align: left">Order type</td>
+</tr>
+<tr>
+<td style="text-align: left">ordQty</td>
+<td style="text-align: left">String</td>
+<td style="text-align: left"></td>
+<td style="text-align: left">Quantity to buy or sell in base asset.</td>
+</tr>
+<tr>
+<td style="text-align: left">ordAmt</td>
+<td style="text-align: left">String</td>
+<td style="text-align: left"></td>
+<td style="text-align: left">Amount to buy or sell in quote asset.</td>
+</tr>
+<tr>
+<td style="text-align: left">fillQty</td>
+<td style="text-align: left">String</td>
+<td style="text-align: left"></td>
+<td style="text-align: left">Filled quantity in base asset.</td>
+</tr>
+<tr>
+<td style="text-align: left">fillAmt</td>
+<td style="text-align: left">String</td>
+<td style="text-align: left"></td>
+<td style="text-align: left">Filled amount in quote asset.</td>
+</tr>
+<tr>
+<td style="text-align: left">ordTag</td>
+<td style="text-align: left">String</td>
+<td style="text-align: left"></td>
+<td style="text-align: left">Order tag</td>
+</tr>
+<tr>
+<td style="text-align: left">totalFee</td>
+<td style="text-align: left">String</td>
+<td style="text-align: left"></td>
+<td style="text-align: left">Total fee</td>
+</tr>
+<tr>
+<td style="text-align: left">feeAsset</td>
+<td style="text-align: left">String</td>
+<td style="text-align: left"></td>
+<td style="text-align: left">Fee asset</td>
+</tr>
+<tr>
+<td style="text-align: left">cTime</td>
+<td style="text-align: left">String</td>
+<td style="text-align: left"></td>
+<td style="text-align: left">Order creation time</td>
+</tr>
+<tr>
+<td style="text-align: left">uTime</td>
+<td style="text-align: left">String</td>
+<td style="text-align: left"></td>
+<td style="text-align: left">Order update time</td>
+</tr>
+<tr>
+<td style="text-align: left">avgFillPx</td>
+<td style="text-align: left">String</td>
+<td style="text-align: left"></td>
+<td style="text-align: left">Average filled price</td>
+</tr>
+<tr>
+<td style="text-align: left">status</td>
+<td style="text-align: left">String</td>
+<td style="text-align: left"></td>
+<td style="text-align: left">Order status: <br /><code>NEW</code>  <br /><code>CANCELLING</code> <br /><code>PARTIAL_FILLED</code> <br /><code>CANCELLED</code> <br /><code>PARTIAL_CANCELED</code><br /><code>FILLED</code></td>
+</tr>
+</tbody></table>
+<h2 id='get-open-order-list'>Get open order list</h2>
+<p>API Key Permission: Read</p>
+<h3 id='http-request-10'>HTTP Request</h3>
+<ul>
+<li>GET <code>/api/v1/openOrders</code></li>
+</ul>
+<h3 id='request-parameters-10'>Request Parameters</h3>
+<table><thead>
+<tr>
+<th style="text-align: left">Name</th>
+<th style="text-align: left">Type</th>
+<th style="text-align: left">Required</th>
+<th style="text-align: left">Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td style="text-align: left">instId</td>
+<td style="text-align: left">String</td>
+<td style="text-align: left">N</td>
+<td style="text-align: left">Instrument ID, e.g. <code>SPOT_BTC/USDT</code>, if both instId and instType is sent, instType will be ignored.</td>
+</tr>
+<tr>
+<td style="text-align: left">instType</td>
+<td style="text-align: left">String</td>
+<td style="text-align: left">Y</td>
+<td style="text-align: left">Instrument type, currently only <code>SPOT</code> is supported</td>
+</tr>
+<tr>
+<td style="text-align: left">side</td>
+<td style="text-align: left">String</td>
+<td style="text-align: left">N</td>
+<td style="text-align: left">Order side</td>
+</tr>
+<tr>
+<td style="text-align: left">ordType</td>
+<td style="text-align: left">String</td>
+<td style="text-align: left">N</td>
+<td style="text-align: left">Order type</td>
+</tr>
+<tr>
+<td style="text-align: left">ordTag</td>
+<td style="text-align: left">String</td>
+<td style="text-align: left">N</td>
+<td style="text-align: left">Order tag</td>
+</tr>
+<tr>
+<td style="text-align: left">status</td>
+<td style="text-align: left">String</td>
+<td style="text-align: left">N</td>
+<td style="text-align: left">Order status:<br /><code>NEW</code><br /><code>CANCELLING</code><br /><code>PARTIAL_FILLED</code></td>
+</tr>
+<tr>
+<td style="text-align: left">sortBy</td>
+<td style="text-align: left">String</td>
+<td style="text-align: left">N</td>
+<td style="text-align: left">Sort field, default sort by cTime, e.g. <code>cTime</code> <code>uTime</code></td>
+</tr>
+</tbody></table>
+
+<table><thead>
+<tr>
+<th style="text-align: left">Name</th>
+<th style="text-align: left">Type</th>
+<th style="text-align: left">Required</th>
+<th style="text-align: left">Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td style="text-align: left">instId</td>
+<td style="text-align: left">String</td>
+<td style="text-align: left">N</td>
+<td style="text-align: left">Instrument ID</td>
+</tr>
+<tr>
+<td style="text-align: left">ordId</td>
+<td style="text-align: left">String</td>
+<td style="text-align: left">N</td>
+<td style="text-align: left">Order id, when both ordId and clOrdId is sent, clOrdId will be ignored.</td>
+</tr>
+<tr>
+<td style="text-align: left">clOrdId</td>
+<td style="text-align: left">String</td>
+<td style="text-align: left">N</td>
+<td style="text-align: left">Client Order ID</td>
+</tr>
+</tbody></table>
+
+<blockquote>
+<p>Response:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"msg"</span><span class="p">:</span><span class="w"> </span><span class="s2">"success"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"code"</span><span class="p">:</span><span class="w"> </span><span class="mi">200</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"instId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"SPOT_ETC/BUSD"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"instType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"SPOT"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"ordId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"22150"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"clOrdId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"a861ca99d3a9460ab7719372776f2863"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"side"</span><span class="p">:</span><span class="w"> </span><span class="s2">"buy"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"ordPx"</span><span class="p">:</span><span class="w"> </span><span class="s2">"10"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"ordType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"limit"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"ordQty"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.05"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"ordAmt"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"fillQty"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.000000000000000000"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"fillAmt"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"ordTag"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"totalFee"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"feeAsset"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BUSD"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"avgFillPx"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"NEW"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"utime"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1679898094933"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"ctime"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1679898094933"</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">],</span><span class="w">
+  </span><span class="nl">"ts"</span><span class="p">:</span><span class="w"> </span><span class="mi">1679898098638</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div><h3 id='response-content-9'>Response Content</h3>
+<table><thead>
+<tr>
+<th style="text-align: left">Name</th>
+<th style="text-align: left">Type</th>
+<th style="text-align: left">Required</th>
+<th style="text-align: left">Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td style="text-align: left">instId</td>
+<td style="text-align: left">String</td>
+<td style="text-align: left"></td>
+<td style="text-align: left">Instrument ID</td>
+</tr>
+<tr>
+<td style="text-align: left">instType</td>
+<td style="text-align: left">String</td>
+<td style="text-align: left"></td>
+<td style="text-align: left">Instrument type</td>
+</tr>
+<tr>
+<td style="text-align: left">ordId</td>
+<td style="text-align: left">String</td>
+<td style="text-align: left"></td>
+<td style="text-align: left">Order ID</td>
+</tr>
+<tr>
+<td style="text-align: left">clOrdId</td>
+<td style="text-align: left">String</td>
+<td style="text-align: left"></td>
+<td style="text-align: left">Client Order ID</td>
+</tr>
+<tr>
+<td style="text-align: left">side</td>
+<td style="text-align: left">String</td>
+<td style="text-align: left"></td>
+<td style="text-align: left">Order side</td>
+</tr>
+<tr>
+<td style="text-align: left">ordPx</td>
+<td style="text-align: left">String</td>
+<td style="text-align: left"></td>
+<td style="text-align: left">Order price</td>
+</tr>
+<tr>
+<td style="text-align: left">ordType</td>
+<td style="text-align: left">String</td>
+<td style="text-align: left"></td>
+<td style="text-align: left">Order type</td>
+</tr>
+<tr>
+<td style="text-align: left">ordQty</td>
+<td style="text-align: left">String</td>
+<td style="text-align: left"></td>
+<td style="text-align: left">Quantity to buy or sell in base asset.</td>
+</tr>
+<tr>
+<td style="text-align: left">ordAmt</td>
+<td style="text-align: left">String</td>
+<td style="text-align: left"></td>
+<td style="text-align: left">Amount to buy or sell in quote asset.</td>
+</tr>
+<tr>
+<td style="text-align: left">fillQty</td>
+<td style="text-align: left">String</td>
+<td style="text-align: left"></td>
+<td style="text-align: left">Filled quantity in base asset.</td>
+</tr>
+<tr>
+<td style="text-align: left">fillAmt</td>
+<td style="text-align: left">String</td>
+<td style="text-align: left"></td>
+<td style="text-align: left">Filled amount in quote asset.</td>
+</tr>
+<tr>
+<td style="text-align: left">ordTag</td>
+<td style="text-align: left">String</td>
+<td style="text-align: left"></td>
+<td style="text-align: left">Order tag</td>
+</tr>
+<tr>
+<td style="text-align: left">totalFee</td>
+<td style="text-align: left">String</td>
+<td style="text-align: left"></td>
+<td style="text-align: left">Total fee</td>
+</tr>
+<tr>
+<td style="text-align: left">feeAsset</td>
+<td style="text-align: left">String</td>
+<td style="text-align: left"></td>
+<td style="text-align: left">Fee asset</td>
+</tr>
+<tr>
+<td style="text-align: left">cTime</td>
+<td style="text-align: left">String</td>
+<td style="text-align: left"></td>
+<td style="text-align: left">Order creation timestamp</td>
+</tr>
+<tr>
+<td style="text-align: left">uTime</td>
+<td style="text-align: left">String</td>
+<td style="text-align: left"></td>
+<td style="text-align: left">Order last updated timestamp</td>
+</tr>
+<tr>
+<td style="text-align: left">avgFillPx</td>
+<td style="text-align: left">String</td>
+<td style="text-align: left"></td>
+<td style="text-align: left">Average filled price</td>
+</tr>
+<tr>
+<td style="text-align: left">status</td>
+<td style="text-align: left">String</td>
+<td style="text-align: left"></td>
+<td style="text-align: left">Order status: <br /><code>NEW</code><br /><code>CANCELLING</code><br /><code>PARTIAL_FILLED</code></td>
+</tr>
+</tbody></table>
+<h2 id='get-order-history'>Get order history</h2>
+<p>API Key Permission: Read</p>
+<h3 id='http-request-11'>HTTP Request</h3>
+<ul>
+<li>GET <code>/api/v1/hisOrders</code></li>
+</ul>
+<h3 id='request-parameters-11'>Request Parameters</h3>
+<table><thead>
+<tr>
+<th style="text-align: left">Name</th>
+<th style="text-align: left">Type</th>
+<th style="text-align: left">Required</th>
+<th style="text-align: left">Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td style="text-align: left">instId</td>
+<td style="text-align: left">String</td>
+<td style="text-align: left">N</td>
+<td style="text-align: left">Instrument ID, if both instId and instType is sent, instType will be ignored.</td>
+</tr>
+<tr>
+<td style="text-align: left">instType</td>
+<td style="text-align: left">String</td>
+<td style="text-align: left">Y</td>
+<td style="text-align: left">Instrument type</td>
+</tr>
+<tr>
+<td style="text-align: left">side</td>
+<td style="text-align: left">String</td>
+<td style="text-align: left">N</td>
+<td style="text-align: left">Order side</td>
+</tr>
+<tr>
+<td style="text-align: left">ordType</td>
+<td style="text-align: left">String</td>
+<td style="text-align: left">N</td>
+<td style="text-align: left">Order type</td>
+</tr>
+<tr>
+<td style="text-align: left">ordTag</td>
+<td style="text-align: left">String</td>
+<td style="text-align: left">N</td>
+<td style="text-align: left">Order tag</td>
+</tr>
+<tr>
+<td style="text-align: left">status</td>
+<td style="text-align: left">String</td>
+<td style="text-align: left">N</td>
+<td style="text-align: left">Order status<br /> <code>CANCELLED</code>  <br /><code>PARTIAL_CANCELED</code> <br /><code>FILLED</code></td>
+</tr>
+<tr>
+<td style="text-align: left">after</td>
+<td style="text-align: left">String</td>
+<td style="text-align: left">N</td>
+<td style="text-align: left">Pagination of data to return records earlier than the requested <code>ordId</code></td>
+</tr>
+<tr>
+<td style="text-align: left">before</td>
+<td style="text-align: left">String</td>
+<td style="text-align: left">N</td>
+<td style="text-align: left">Pagination of data to return records newer than the requested <code>ordId</code></td>
+</tr>
+<tr>
+<td style="text-align: left">start</td>
+<td style="text-align: left">String</td>
+<td style="text-align: left">N</td>
+<td style="text-align: left">Filter with a begin timestamp. Unix timestamp format in milliseconds, e.g. 1597026383085</td>
+</tr>
+<tr>
+<td style="text-align: left">end</td>
+<td style="text-align: left">String</td>
+<td style="text-align: left">N</td>
+<td style="text-align: left">Filter with an end timestamp. Unix timestamp format in milliseconds, e.g. 1597026383085</td>
+</tr>
+<tr>
+<td style="text-align: left">limit</td>
+<td style="text-align: left">String</td>
+<td style="text-align: left">N</td>
+<td style="text-align: left">Number of results per request. The maximum is <code>100</code>; The default is <code>100</code></td>
+</tr>
+<tr>
+<td style="text-align: left">sortBy</td>
+<td style="text-align: left">String</td>
+<td style="text-align: left">N</td>
+<td style="text-align: left">Sort field, default sort by cTime, e.g. <code>cTime</code> <code>uTime</code></td>
+</tr>
+</tbody></table>
+
+<blockquote>
+<p>Response:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"msg"</span><span class="p">:</span><span class="w"> </span><span class="s2">"success"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"code"</span><span class="p">:</span><span class="w"> </span><span class="mi">200</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"instId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"SPOT_ETC/BUSD"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"instType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"SPOT"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"ordId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"22149"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"clOrdId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0255c8c5b6ad4d70bbb4c8f9d1d7557f"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"side"</span><span class="p">:</span><span class="w"> </span><span class="s2">"buy"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"ordPx"</span><span class="p">:</span><span class="w"> </span><span class="s2">"10"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"ordType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"limit"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"ordQty"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.05"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"ordAmt"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"fillQty"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.000000000000000000"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"fillAmt"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"ordTag"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"totalFee"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"feeAsset"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BUSD"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"avgFillPx"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"CANCELLED"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"utime"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1679897917759"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"ctime"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1679897908029"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"instId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"SPOT_ETC/BUSD"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"instType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"SPOT"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"ordId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"22148"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"clOrdId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"f6d6538acf8f4262a2e30ee1d603945b"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"side"</span><span class="p">:</span><span class="w"> </span><span class="s2">"buy"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"ordPx"</span><span class="p">:</span><span class="w"> </span><span class="s2">"33"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"ordType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"limit"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"ordQty"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.05"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"ordAmt"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"fillQty"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.050000000000000000"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"fillAmt"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"ordTag"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"totalFee"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.0015"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"feeAsset"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ETC"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"avgFillPx"</span><span class="p">:</span><span class="w"> </span><span class="s2">"20.7168"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"FILLED"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"utime"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1679897802005"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"ctime"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1679897698010"</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">],</span><span class="w">
+  </span><span class="nl">"ts"</span><span class="p">:</span><span class="w"> </span><span class="mi">1679898148424</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div><h3 id='response-content-10'>Response Content</h3>
+<table><thead>
+<tr>
+<th style="text-align: left">Name</th>
+<th style="text-align: left">Type</th>
+<th style="text-align: left">Required</th>
+<th style="text-align: left">Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td style="text-align: left">instId</td>
+<td style="text-align: left">String</td>
+<td style="text-align: left"></td>
+<td style="text-align: left">Instrument ID</td>
+</tr>
+<tr>
+<td style="text-align: left">instType</td>
+<td style="text-align: left">String</td>
+<td style="text-align: left"></td>
+<td style="text-align: left">Instrument type</td>
+</tr>
+<tr>
+<td style="text-align: left">ordId</td>
+<td style="text-align: left">String</td>
+<td style="text-align: left"></td>
+<td style="text-align: left">Order ID</td>
+</tr>
+<tr>
+<td style="text-align: left">clOrdId</td>
+<td style="text-align: left">String</td>
+<td style="text-align: left"></td>
+<td style="text-align: left">Client Order ID</td>
+</tr>
+<tr>
+<td style="text-align: left">side</td>
+<td style="text-align: left">String</td>
+<td style="text-align: left"></td>
+<td style="text-align: left">Order side</td>
+</tr>
+<tr>
+<td style="text-align: left">ordPx</td>
+<td style="text-align: left">String</td>
+<td style="text-align: left"></td>
+<td style="text-align: left">Order price</td>
+</tr>
+<tr>
+<td style="text-align: left">ordType</td>
+<td style="text-align: left">String</td>
+<td style="text-align: left"></td>
+<td style="text-align: left">Order type</td>
+</tr>
+<tr>
+<td style="text-align: left">ordQty</td>
+<td style="text-align: left">String</td>
+<td style="text-align: left"></td>
+<td style="text-align: left">Quantity to buy or sell in base asset.</td>
+</tr>
+<tr>
+<td style="text-align: left">ordAmt</td>
+<td style="text-align: left">String</td>
+<td style="text-align: left"></td>
+<td style="text-align: left">Amount to buy or sell in quote asset.</td>
+</tr>
+<tr>
+<td style="text-align: left">fillQty</td>
+<td style="text-align: left">String</td>
+<td style="text-align: left"></td>
+<td style="text-align: left">Filled quantity in base asset.</td>
+</tr>
+<tr>
+<td style="text-align: left">fillAmt</td>
+<td style="text-align: left">String</td>
+<td style="text-align: left"></td>
+<td style="text-align: left">Filled amount in quote asset.</td>
+</tr>
+<tr>
+<td style="text-align: left">ordTag</td>
+<td style="text-align: left">String</td>
+<td style="text-align: left"></td>
+<td style="text-align: left">Order tag</td>
+</tr>
+<tr>
+<td style="text-align: left">totalFee</td>
+<td style="text-align: left">String</td>
+<td style="text-align: left"></td>
+<td style="text-align: left">Total fee</td>
+</tr>
+<tr>
+<td style="text-align: left">feeAsset</td>
+<td style="text-align: left">String</td>
+<td style="text-align: left"></td>
+<td style="text-align: left">Fee asset</td>
+</tr>
+<tr>
+<td style="text-align: left">cTime</td>
+<td style="text-align: left">String</td>
+<td style="text-align: left"></td>
+<td style="text-align: left">Order creation timestamp</td>
+</tr>
+<tr>
+<td style="text-align: left">uTime</td>
+<td style="text-align: left">String</td>
+<td style="text-align: left"></td>
+<td style="text-align: left">Order last updated timestamp</td>
+</tr>
+<tr>
+<td style="text-align: left">avgFillPx</td>
+<td style="text-align: left">String</td>
+<td style="text-align: left"></td>
+<td style="text-align: left">Average filled price</td>
+</tr>
+<tr>
+<td style="text-align: left">status</td>
+<td style="text-align: left">String</td>
+<td style="text-align: left"></td>
+<td style="text-align: left">Order status:<br /><code>CANCELLED</code> <br /><code>PARTIAL_CANCELED</code> <br /><code>FILLED</code></td>
+</tr>
+</tbody></table>
+<h2 id='get-trade-list'>Get trade list</h2>
+<p>API Key Permission: Read</p>
+<h3 id='http-request-12'>HTTP Request</h3>
+<ul>
+<li>GET <code>/api/v1/hisTrades</code></li>
+</ul>
+<h3 id='request-parameters-12'>Request Parameters</h3>
+<table><thead>
+<tr>
+<th style="text-align: left">Name</th>
+<th style="text-align: left">Type</th>
+<th style="text-align: left">Required</th>
+<th style="text-align: left">Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td style="text-align: left">instId</td>
+<td style="text-align: left">String</td>
+<td style="text-align: left">N</td>
+<td style="text-align: left">Instrument ID, if both instId and instType is sent, instType will be ignored.</td>
+</tr>
+<tr>
+<td style="text-align: left">instType</td>
+<td style="text-align: left">String</td>
+<td style="text-align: left">Y</td>
+<td style="text-align: left">Instrument type</td>
+</tr>
+<tr>
+<td style="text-align: left">ordId</td>
+<td style="text-align: left">String</td>
+<td style="text-align: left">N</td>
+<td style="text-align: left">Order ID</td>
+</tr>
+<tr>
+<td style="text-align: left">ordTag</td>
+<td style="text-align: left">String</td>
+<td style="text-align: left">N</td>
+<td style="text-align: left">Order tag</td>
+</tr>
+<tr>
+<td style="text-align: left">after</td>
+<td style="text-align: left">String</td>
+<td style="text-align: left">N</td>
+<td style="text-align: left">Pagination of data to return records earlier than the requested <code>ordId</code></td>
+</tr>
+<tr>
+<td style="text-align: left">before</td>
+<td style="text-align: left">String</td>
+<td style="text-align: left">N</td>
+<td style="text-align: left">Pagination of data to return records newer than the requested <code>ordId</code></td>
+</tr>
+<tr>
+<td style="text-align: left">start</td>
+<td style="text-align: left">String</td>
+<td style="text-align: left">N</td>
+<td style="text-align: left">Filter with a begin timestamp. Unix timestamp format in milliseconds, e.g. 1597026383085</td>
+</tr>
+<tr>
+<td style="text-align: left">end</td>
+<td style="text-align: left">String</td>
+<td style="text-align: left">N</td>
+<td style="text-align: left">Filter with an end timestamp. Unix timestamp format in milliseconds, e.g. 1597026383085</td>
+</tr>
+<tr>
+<td style="text-align: left">limit</td>
+<td style="text-align: left">String</td>
+<td style="text-align: left">N</td>
+<td style="text-align: left">Number of results per request. The maximum is <code>100</code>; The default is <code>100</code></td>
+</tr>
+<tr>
+<td style="text-align: left">sortBy</td>
+<td style="text-align: left">String</td>
+<td style="text-align: left">N</td>
+<td style="text-align: left">Sort field, default sort by cTime, e.g. <code>cTime</code> <code>uTime</code></td>
+</tr>
+</tbody></table>
+
+<blockquote>
+<p>Response:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"code"</span><span class="p">:</span><span class="w"> </span><span class="mi">200</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"clOrdId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"3b9d89e05669404ab97e95eb4319942f"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"fee"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.000000000000000000"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"feeAsset"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ETC"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"fillPx"</span><span class="p">:</span><span class="w"> </span><span class="s2">"21.020000000000000000"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"fillQty"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.470000000000000000"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"fillTime"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1680074614135"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"instId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"SPOT_ETC/BUSD"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"instType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"SPOT"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"ordId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2123633"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"ordTag"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"side"</span><span class="p">:</span><span class="w"> </span><span class="s2">"buy"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"tradeId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"3"</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">],</span><span class="w">
+  </span><span class="nl">"msg"</span><span class="p">:</span><span class="w"> </span><span class="s2">"success"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"ts"</span><span class="p">:</span><span class="w"> </span><span class="mi">1680084241409</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div><h3 id='response-content-11'>Response Content</h3>
+<table><thead>
+<tr>
+<th style="text-align: left">Name</th>
+<th style="text-align: left">Type</th>
+<th style="text-align: left">Required</th>
+<th style="text-align: left">Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td style="text-align: left">instId</td>
+<td style="text-align: left">String</td>
+<td style="text-align: left"></td>
+<td style="text-align: left">Instrument ID</td>
+</tr>
+<tr>
+<td style="text-align: left">instType</td>
+<td style="text-align: left">String</td>
+<td style="text-align: left"></td>
+<td style="text-align: left">Instrument type</td>
+</tr>
+<tr>
+<td style="text-align: left">tradeId</td>
+<td style="text-align: left">String</td>
+<td style="text-align: left"></td>
+<td style="text-align: left">Trade ID</td>
+</tr>
+<tr>
+<td style="text-align: left">ordId</td>
+<td style="text-align: left">String</td>
+<td style="text-align: left"></td>
+<td style="text-align: left">Order ID</td>
+</tr>
+<tr>
+<td style="text-align: left">clOrdId</td>
+<td style="text-align: left">String</td>
+<td style="text-align: left"></td>
+<td style="text-align: left">Client Order ID</td>
+</tr>
+<tr>
+<td style="text-align: left">side</td>
+<td style="text-align: left">String</td>
+<td style="text-align: left"></td>
+<td style="text-align: left">Order side</td>
+</tr>
+<tr>
+<td style="text-align: left">fillPx</td>
+<td style="text-align: left">String</td>
+<td style="text-align: left"></td>
+<td style="text-align: left">Filled price</td>
+</tr>
+<tr>
+<td style="text-align: left">fillQty</td>
+<td style="text-align: left">String</td>
+<td style="text-align: left"></td>
+<td style="text-align: left">Filled quantity</td>
+</tr>
+<tr>
+<td style="text-align: left">ordTag</td>
+<td style="text-align: left">String</td>
+<td style="text-align: left"></td>
+<td style="text-align: left">Order tag</td>
+</tr>
+<tr>
+<td style="text-align: left">fee</td>
+<td style="text-align: left">String</td>
+<td style="text-align: left"></td>
+<td style="text-align: left">fee</td>
+</tr>
+<tr>
+<td style="text-align: left">feeAsset</td>
+<td style="text-align: left">String</td>
+<td style="text-align: left"></td>
+<td style="text-align: left">Fee asset</td>
+</tr>
+<tr>
+<td style="text-align: left">fillTime</td>
+<td style="text-align: left">String</td>
+<td style="text-align: left"></td>
+<td style="text-align: left">filled time, Unix timestamp format in milliseconds, e.g. 1597026383085</td>
+</tr>
+</tbody></table>
+<h1 id='error-code'>Error Code</h1>
+<table><thead>
+<tr>
+<th>Error Code</th>
+<th>Http Status Code</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>40000</td>
+<td>400</td>
+<td>General request fail</td>
+</tr>
+<tr>
+<td>40001</td>
+<td>400</td>
+<td>Mandatory parameter {0} cannot be empty</td>
+</tr>
+<tr>
+<td>40002</td>
+<td>400</td>
+<td>{0} parameter is illegal, please check and try again.</td>
+</tr>
+<tr>
+<td>45050</td>
+<td>400</td>
+<td>You do not have permission to place this type of order, please contact your account manager</td>
+</tr>
+<tr>
+<td>45051</td>
+<td>400</td>
+<td>The order quantity is less than the minimum limit, please re-enter</td>
+</tr>
+<tr>
+<td>45052</td>
+<td>400</td>
+<td>The order quantity is greater than the maximum limit, please re-enter</td>
+</tr>
+<tr>
+<td>45053</td>
+<td>400</td>
+<td>The number of pending orders exceeded the limit, please try again later</td>
+</tr>
+<tr>
+<td>45054</td>
+<td>400</td>
+<td>Failed to cancel order, order does not exist</td>
+</tr>
+<tr>
+<td>45055</td>
+<td>400</td>
+<td>You do not have access to spot function, please contact your account manager</td>
+</tr>
+<tr>
+<td>45062</td>
+<td>400</td>
+<td>Trading pair is not tradable currently</td>
+</tr>
+<tr>
+<td>45063</td>
+<td>400</td>
+<td>Trading pair do not exist</td>
+</tr>
+<tr>
+<td>45066</td>
+<td>400</td>
+<td>Repeat order, please check and try again.</td>
+</tr>
+<tr>
+<td>45067</td>
+<td>400</td>
+<td>The available balance is not enough, please transfer or recharge and try again</td>
+</tr>
+<tr>
+<td>45068</td>
+<td>400</td>
+<td>Order quantity exceeded the system limit, please check and try again</td>
+</tr>
+<tr>
+<td>46000</td>
+<td>400</td>
+<td>No access to the uri</td>
+</tr>
+<tr>
+<td>46002</td>
+<td>400</td>
+<td>IP is not in whitelist</td>
+</tr>
+<tr>
+<td>50000</td>
+<td>500</td>
+<td>Server Timeout</td>
+</tr>
+</tbody></table>
+
+      </div>
+      <div class="dark-box">
+          <div class="lang-selector">
+                <a href="#" data-language-name="json">json</a>
+          </div>
+      </div>
+    </div>
+    <script>
+      const lang_btn = document.getElementById('lang_box');
+      const btn_spot = document.getElementById('btn_spot');
+      // const btn_dm = document.getElementById('btn_dm');
+      // const btn_coin_margined_swap = document.getElementById('btn_coin_margined_swap');
+      // const btn_usdt_swap = document.getElementById('btn_usdt_swap')
+      // const btn_option = document.getElementById('btn_option');
+      const v1_url = document.getElementById('v1_url');
+      const url = GetUrlRelativePath();
+
+      if(url.indexOf('cn') != -1){
+        //如果是中文环境
+        lang_btn.innerHTML = 'English';
+        btn_spot.innerHTML = '现货';
+        // btn_dm.innerHTML = '币本位交割合约';
+        // btn_coin_margined_swap.innerHTML = '币本位永续合约';
+        // btn_usdt_swap.innerHTML = 'U本位合约';
+        // btn_option.innerHTML = '期权合约';
+        lang_btn.href = url.replace('cn/', 'en/');
+        btn_spot.href = btn_spot.href.replace('en/', 'cn/');
+        // btn_dm.href = btn_dm.href.replace('en/', 'cn/');
+        // btn_coin_margined_swap.href = btn_coin_margined_swap.href.replace('en/', 'cn/');
+        // btn_usdt_swap.href = btn_usdt_swap.href.replace('en/', 'cn/');
+        // btn_option.href = btn_option.href.replace('en/', 'cn/');
+        v1_url.href = '/docs/spot/v1/cn/';
+      }else{
+        //如果是英文环境
+        lang_btn.innerHTML = '中文';
+        btn_spot.innerHTML = 'Spot';
+        // btn_dm.innerHTML = 'Coin-M Futures';
+        // btn_swap.innerHTML = 'SWAP API';
+        // btn_coin_margined_swap.innerHTML = 'Coin-M Swaps';
+        // btn_usdt_swap.innerHTML = 'USDT-M';
+        // btn_option.innerHTML = 'Option';
+        lang_btn.href = url.replace('en/', 'cn/');
+        btn_spot.href = btn_spot.href.replace('cn/', 'en/');
+        // btn_dm.href = btn_dm.href.replace('cn/', 'en/');
+        // btn_swap.href = btn_swap.href.replace('cn/', 'en/');
+        // btn_coin_margined_swap.href = btn_coin_margined_swap.href.replace('cn/', 'en/');
+        // btn_usdt_swap.href = btn_usdt_swap.href.replace('cn/', 'en/');
+        // btn_option.href = btn_option.href.replace('cn/', 'en/');
+        v1_url.href = '/docs/spot/v1/en/';
+      }
+
+      if(location.href.indexOf('docs/dm/v') > 0){
+        btn_spot.className = '';
+        btn_dm.className = 'current';
+        btn_coin_margined_swap.className = '';
+        btn_usdt_swap.className = '';
+        btn_option.className = '';
+      }
+      else if(location.href.indexOf('docs/coin_margined_swap/v') > 0){
+        btn_spot.className = '';
+        btn_dm.className = '';
+        btn_coin_margined_swap.className = 'current';
+        btn_usdt_swap.className = '';
+        btn_option.className = '';
+      } else if(location.href.indexOf('docs/usdt_swap/v') > 0){
+        btn_spot.className = '';
+        btn_dm.className = '';
+        btn_coin_margined_swap.className = '';
+        btn_usdt_swap.className = 'current';
+        btn_option.className = '';
+      } else if(location.href.indexOf('docs/option/v') > 0){
+        btn_spot.className = '';
+        btn_coin_margined_swap.className = '';
+        btn_usdt_swap.className = '';
+        btn_dm.className = '';
+        btn_option.className = 'current';
+      } else {
+        btn_spot.className = 'current';
+        /*btn_coin_margined_swap.className = '';
+        btn_usdt_swap.className = '';
+        btn_dm.className = '';
+        btn_option.className = '';*/
+      }
+      //显示语言切换按钮
+      lang_btn.style.display = 'block';
+      function GetUrlRelativePath(){
+        let url = document.location.toString();
+        let arrUrl = url.split("//");
+        let start = arrUrl[1].indexOf("/");
+        let relUrl = arrUrl[1].substring(start);
+        if(relUrl.indexOf("?") != -1){
+          relUrl = relUrl.split("?")[0];
+        }
+        if(relUrl.indexOf("#") != -1){
+          relUrl = relUrl.split("#")[0];
+        }
+        return relUrl;
+  　　}
+    </script>
+  </body>
+</html>
