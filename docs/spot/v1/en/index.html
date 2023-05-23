@@ -387,7 +387,7 @@ and the right hand side is the request and response samples.</p>
 <p><strong>REST API</strong></p>
 
 <ul>
-<li>https://api.hk-dax.com</li>
+<li>https://api.daxhk.com</li>
 </ul>
 <h2 id='rate-limit-rule'>Rate limit rule</h2>
 <p>The rate limit rule limits the frequency of api access, and currently each api is limited to 10
@@ -411,7 +411,7 @@ has proper permission.</p>
 <p>A valid request consists of below parts:</p>
 
 <ul>
-<li>API Path: for example https://api.hk-dax.com/api/v1/order</li>
+<li>API Path: for example https://api.daxhk.com/api/v1/order</li>
 <li>API Access Key: The &#39;Access Key&#39; in your API Key</li>
 <li>Signature Method: The Hash method that is used to sign, it uses HmacSHA256</li>
 <li>Signature Version: The version for the signature protocol, it uses 1</li>
@@ -430,11 +430,11 @@ normalized before signing. Below signing steps take the order query as an exampl
 
 <p>This is a full URL to query one order:</p>
 
-<p><code>https://api.hk-dax.com/api/v1/order?AccessKeyId=e2xxxxxx-99xxxxxx-84xxxxxx-7xxxx&amp;SignatureMethod=HmacSHA256&amp;SignatureVersion=1&amp;Timestamp=1662022581951</code></p>
+<p><code>https://api.daxhk.com/api/v1/order?AccessKeyId=e2xxxxxx-99xxxxxx-84xxxxxx-7xxxx&amp;SignatureMethod=HmacSHA256&amp;SignatureVersion=1&amp;Timestamp=1662022581951</code></p>
 <h3 id='1-the-request-method-get-or-post-append-line-break-quot-n-quot'>1. The request Method (GET or POST), append line break &quot;\n&quot;</h3>
 <p><code>GET\n</code></p>
 <h3 id='2-the-host-with-lower-case-append-line-break-quot-n-quot'>2. The host with lower case, append line break &quot;\n&quot;</h3>
-<p><code>api.hk-dax.com\n</code></p>
+<p><code>api.daxhk.com\n</code></p>
 <h3 id='3-the-path-append-line-break-quot-n-quot'>3. The path, append line break &quot;\n&quot;</h3>
 <p><code>/api/v1/order\n</code></p>
 <h3 id='4-the-parameters-are-url-encoded-and-ordered-based-on-ascii'>4. The parameters are URL encoded, and ordered based on ASCII</h3>
@@ -453,7 +453,7 @@ For example, The semicolon &#39;:&#39; should be encoded as &#39;%3A&#39;, The s
 <p><code>AccessKeyId=e2xxxxxx-99xxxxxx-84xxxxxx-7xxxx&amp;SignatureMethod=HmacSHA256&amp;SignatureVersion=1&amp;Timestamp=16620225819511</code></p>
 <h3 id='6-assemble-the-pre-signed-text'>6. Assemble the pre-signed text</h3>
 <p><code>POST\n</code><br>
-<code>api.hk-dax.com\n</code><br>
+<code>api.daxhk.com\n</code><br>
 <code>/api/v1/order\n</code><br>
 <code>AccessKeyId=e2xxxxxx-99xxxxxx-84xxxxxx-7xxxx&amp;SignatureMethod=HmacSHA256&amp;SignatureVersion=1&amp;Timestamp=1662022581951</code></p>
 <h3 id='7-use-the-pre-signed-text-and-your-secret-key-to-generate-a-signature'>7. Use the pre-signed text and your Secret Key to generate a signature</h3>
@@ -473,7 +473,7 @@ function.</li>
 </ul>
 
 <p>Finally, the request sent to API should be:<br>
-<code>https://api.hk-dax.com/api/v1/order?AccessKeyId=e2xxxxxx-99xxxxxx-84xxxxxx-7xxxx&amp;SignatureMethod=HmacSHA256&amp;SignatureVersion=1&amp;Timestamp=1662022581951&amp;Signature=4F65x5A2bLyMWVQj3Aqp%2BB4w%2BivaA7n5Oi2SuYtCJ9o%3D</code></p>
+<code>https://api.daxhk.com/api/v1/order?AccessKeyId=e2xxxxxx-99xxxxxx-84xxxxxx-7xxxx&amp;SignatureMethod=HmacSHA256&amp;SignatureVersion=1&amp;Timestamp=1662022581951&amp;Signature=4F65x5A2bLyMWVQj3Aqp%2BB4w%2BivaA7n5Oi2SuYtCJ9o%3D</code></p>
 <h2 id='demo'>Demo</h2>
 <p>Currently, we provide <a href="">go</a>
 and <a href="">java</a> demo.</p>
